@@ -1,0 +1,33 @@
+<img src="/img/cachorro.svg" alt="cachorro"/>
+
+    <h1>Guia perguntas</h1>
+
+    <p>nome: <%= name %></p>
+
+    <p>Linguagem: <%= lang %></p>
+
+    <p>Empresa: <%= empresa %></p>
+
+    <p>Inscritos: <%= inscritos %></p>
+
+    <h3>Produtos da Lista</h3>
+    <p><% produtos.forEach(function(NovaVariavelProdutos){ %></p>        
+    <hr/><%= NovaVariavelProdutos.nome %>
+        <%= NovaVariavelProdutos.preco %>
+    <p><%})%></p>
+
+   <%if(msg === true){  %>
+    <h3>Tudo Certo!</h3>
+    <%} else{%>
+    <h3>Algo deu Errado!</h3>
+    <%} %>
+
+
+     var name = req.params.name;
+    var lang = req.params.lang;
+    var msg = false;
+    var produtos = [
+        {nome:"Doritos",preco: 7.50},
+        {nome:"Monitor",preco: 750},
+        {nome:"WebCam",preco: 26}
+    ]
